@@ -6,17 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
     <div id="root">
-        <ul>
-            <li v-for="contact library">
-                 {{ contact.name }}
-                 <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
-            </li>
-        </ul>
+        <div class="app-wrapper">
+            <div class="app-container">
+                <!-- left-col -->
+                <div class="left-col">
+                    <!-- Column-header -->
+                    <div class="column-header">
+                        <div class="column-header-contact">
+                            <div class="header-contact-image">
+                                <img src="img/avatar_1.jpg" alt="">
+                            </div>
+                            <div class="header-contact-name">
+                                Nome Utente
+                            </div>
+                        </div>
+                        <div class="column-header-icon">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <!-- Disclaimer -->
+                    <div class="disclaimer">
+                        <div class="disclaimer-logo">
+                            <i aria-hidden="true" class="fa fa-bell-slash"></i>
+                        </div>
+                        <div class="disclaimer-info">
+                            
+                            <div class="disclaimer-text">
+                                Ricevi notifiche di nuovi messaggi
+                            </div>
+                            <div class="disclaimer-link">
+                                <a href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-area">
+                        <div class="search-input-container">
+                            <span class="search-lens">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input class="search-input" type="text" placeholder="Cerca o inizia una nuova">
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div class="contact">
+                            <div class="contact-info">
+                                <div class="contact-image">
+                                    <img src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-name">
+                                    Michele
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-image">
+                                    <img src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-name">
+                                    Fabio
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-image">
+                                    <img src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-name">
+                                    Samuele
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-image">
+                                    <img src="img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="contact-name">
+                                    Luisa
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- right-col -->
+                <div class="right-col">
+                    <div class="column-header">
+                        <div class="column-header-contact">
+                            <div class="header-contact-image">
+                                <img src="img/avatar_1.jpg" alt="">
+                            </div>
+                            <div class="header-contact-name">
+                                Michele
+                                <div class="contact-date">
+                                    Ultimo accesso alle ore ...
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-header-icon">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                    <!-- Messages -->
+                    <div class="messages">
+                        <div class="message">
+                            Scrivi un messaggio
+                        </div>
+                    </div>
+                    <div class="message-actions">
+                        <div class="message-actions-icon">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="message-actions-input">
+                            <input type="text">
+                        </div>
+                        <div class="message-actions-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
