@@ -57,6 +57,7 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 /* DISCLAIMER */
 .disclaimer {
@@ -135,9 +136,49 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: lightblue;
+    background-color: white;
 }
-.messages{
+.message-container{
     flex-grow: 1;
     background-image: url("mine.jpg");
+    padding: 50px;
+}
+.message-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f3eeea;
+}
+.message-actions-input{
+    flex-grow: 1;
+    padding: 0 12px;
+    border-color: #f3eeea;
+}
+.message-actions-input input{
+    width: 100%;
+    padding: 8px;
+
+}
+.message-actions-icon{
+    font-size: 20px;
+}
+.message{
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 45%;
+    min-width: 35%;
+    display: inline-block;
+    margin: 5px;
+}
+.message.sent{
+    float: right;
+    clear: both;
+    background-color: #d5f9ba;
+}
+.message.received{
+    float: left;
+    clear: both;
+    background-color: white;
 }
