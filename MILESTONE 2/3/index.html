@@ -92,27 +92,26 @@
                     </div>
                     <!-- Messages -->
                     <div class="message-container">
-                        <div v-for="message in contacts[activeContact].message-container" class="message sent">
+                        <div v-for="message in contacts[activeContact].messages" class="message sent">
                             {{ message.text }}
-
                             <div class="message-date">
                                 10/01/2020 15:30:55
                             </div>
                         </div>
-                        <div class="message-actions">
-                            <div class="message-actions-icon">
-                                <i class="far fa-smile"></i>
-                            </div>
-                            <div class="message-actions-input">
-                                <input 
-                                type="text" 
-                                 placeholder="Scrivi un messaggio"
-                                v-model="newMessageText"
-                                @keyup.enter="sendNewMessage()">
-                            </div>
-                            <div class="message-actions-icon">
-                                <i class="fas fa-microphone"></i>
-                            </div>
+                    </div>
+                    <div class="message-actions">
+                        <div class="message-actions-icon">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div class="message-actions-input">
+                            <input 
+                            type="text" 
+                             placeholder="Scrivi un messaggio"
+                            v-model="newMessageText"
+                            @keyup.enter="sendNewMessage()">
+                        </div>
+                        <div class="message-actions-icon">
+                            <i class="fas fa-microphone"></i>
                         </div>
                     </div>
                 </div>
