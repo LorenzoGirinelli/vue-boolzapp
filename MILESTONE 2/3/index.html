@@ -56,39 +56,16 @@
                         </div>
                     </div>
                     <div class="contacts">
-                        <div class="contact">
+                        <div v-for="contact in contacts" class="contact">
                             <div class="contact-info">
                                 <div class="contact-image">
-                                    <img src="img/avatar_1.jpg" alt="">
+                                    <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                                 </div>
                                 <div class="contact-name">
-                                    Michele
+                                    {{ contact.name }}
                                 </div>
                             </div>
-                            <div class="contact-info">
-                                <div class="contact-image">
-                                    <img src="img/avatar_1.jpg" alt="">
-                                </div>
-                                <div class="contact-name">
-                                    Fabio
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-image">
-                                    <img src="img/avatar_1.jpg" alt="">
-                                </div>
-                                <div class="contact-name">
-                                    Samuele
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-image">
-                                    <img src="img/avatar_1.jpg" alt="">
-                                </div>
-                                <div class="contact-name">
-                                    Luisa
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -98,10 +75,10 @@
                     <div class="column-header">
                         <div class="column-header-contact">
                             <div class="header-contact-image">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'" :alt="contacts[activeContact].name">
                             </div>
                             <div class="header-contact-name">
-                                Samuele
+                                {{ contacts[activeContact].name }}
                                 <div class="contact-date">
                                     Ultimo accesso alle ore ...
                                 </div>
@@ -115,31 +92,32 @@
                     </div>
                     <!-- Messages -->
                     <div class="message-container">
-                        <div class="message received">
-                            messaggioooooo
+                        <div v-for="message in contacts[activeContact].message-container" class="message sent">
+                            {{ message.text }}
+
+                            <div class="message-date">
+                                10/01/2020 15:30:55
+                            </div>
                         </div>
-                        <div class="message sent">
-                            messaggioooooo
-                        </div>
-                        <div class="message received">
-                            messaggioooooo
-                        </div>
-                    </div>
-                    <div class="message-actions">
-                        <div class="message-actions-icon">
-                            <i class="far fa-smile"></i>
-                        </div>
-                        <div class="message-actions-input">
-                            <input type="text" placeholder="Scrivi un messaggio">
-                        </div>
-                        <div class="message-actions-icon">
-                            <i class="fas fa-microphone"></i>
+                        <div class="message-actions">
+                            <div class="message-actions-icon">
+                                <i class="far fa-smile"></i>
+                            </div>
+                            <div class="message-actions-input">
+                                <input 
+                                type="text" 
+                                 placeholder="Scrivi un messaggio"
+                                v-model="newMessageText"
+                                @keyup.enter="sendNewMessage()">
+                            </div>
+                            <div class="message-actions-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>

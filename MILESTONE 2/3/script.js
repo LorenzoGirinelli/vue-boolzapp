@@ -4,6 +4,8 @@ const app = new Vue(
     {
         el: '#root',
         data: {
+            newMessageText: '',
+            activeContact: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -91,7 +93,28 @@ const app = new Vue(
             ]
         },
 
-        methods: { 
+        methods: {
+            changeActiveContact: function (index) {
+                this.activeContact = index;
+            },
+            sendNewMessage: function () {
+                const newMessage = {
+                    date: datejs().format("DD/MM/YYYY HH:mm:ss"),
+                    text: this.newMessageText,
+                    status: 'sent'
+                };
+                this.contacts[this.activeContact].messages.push(newMessage);
+                this.newMessageText = '';
+
+                satTimeout(() => {
+                    const newReplyMessage = {
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                        text: 'ok',
+                        status:'received'
+                    };
+                    this.contacts[this.activeContact].messages.push(newReplyMessage);
+                }, 1000);
+            }
         },
     }
 );
