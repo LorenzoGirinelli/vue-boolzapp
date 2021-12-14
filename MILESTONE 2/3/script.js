@@ -99,14 +99,14 @@ const app = new Vue(
             },
             sendNewMessage: function () {
                 const newMessage = {
-                    date: datejs().format("DD/MM/YYYY HH:mm:ss"),
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: this.newMessageText,
-                    status: 'sent'
+                    status:'sent'
                 };
                 this.contacts[this.activeContact].messages.push(newMessage);
                 this.newMessageText = '';
-
-                satTimeout(() => {
+                
+                setTimeout(() => {
                     const newReplyMessage = {
                         date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                         text: 'ok',
@@ -115,6 +115,6 @@ const app = new Vue(
                     this.contacts[this.activeContact].messages.push(newReplyMessage);
                 }, 1000);
             }
-        },
+        }
     }
 );

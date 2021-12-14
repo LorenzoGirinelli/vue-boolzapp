@@ -114,6 +114,9 @@ body{
     padding: 10px;
     border-bottom: 1px solid #FAFAFA;
 }
+.contact.active{
+    background-color: rgba(0, 0, 0, 0.1);
+}
 .contact-info{
     display: flex;
 }

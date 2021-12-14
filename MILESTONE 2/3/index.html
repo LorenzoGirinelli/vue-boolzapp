@@ -56,7 +56,11 @@
                         </div>
                     </div>
                     <div class="contacts">
-                        <div v-for="contact in contacts" class="contact">
+                        <div v-for="(contact, index) in contacts" 
+                        class="contact"
+                        :class="{'active': index === activeContact}"
+                        @click="changeActiveContact(index)"
+                        >
                             <div class="contact-info">
                                 <div class="contact-image">
                                     <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
@@ -92,13 +96,17 @@
                     </div>
                     <!-- Messages -->
                     <div class="message-container">
-                        <div v-for="message in contacts[activeContact].messages" class="message sent">
+                        <div v-for="message in contacts[activeContact].messages" 
+                        class="message"
+                        :class="{'sent': message.status === 'sent', 'received': message.status === 'received'} "
+                        >
                             {{ message.text }}
                             <div class="message-date">
                                 10/01/2020 15:30:55
                             </div>
                         </div>
                     </div>
+                    <!-- Message Actions -->
                     <div class="message-actions">
                         <div class="message-actions-icon">
                             <i class="far fa-smile"></i>
@@ -117,6 +125,8 @@
                 </div>
             </div>
         </div>
+        
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
