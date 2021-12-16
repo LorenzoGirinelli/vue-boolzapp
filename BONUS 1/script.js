@@ -115,7 +115,8 @@ const app = new Vue(
                     };
                     this.contacts[this.activeContact].messages.push(newReplyMessage);
                 }, 1000);
-            }
+            },
+            
         }
     }
 );

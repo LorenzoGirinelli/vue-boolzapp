@@ -56,7 +56,9 @@
                         </div>
                     </div>
                     <div class="contacts">
-                        <div v-for="(contact, index) in contacts" 
+                        <div 
+                        v-for="(contact, index) in contacts"
+                        v-if="contact.visible"
                         class="contact"
                         :class="{'active': index === activeContact}"
                         @click="changeActiveContact(index)"
